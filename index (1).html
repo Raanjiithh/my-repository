@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranjith Kumar R — Senior Quality Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F2438;
+    --navy-deep: #0A1A2A;
+    --paper: #F7F4EE;
+    --paper-dim: #EFEAE0;
+    --brass: #C89B3C;
+    --brass-soft: #DDBD73;
+    --slate: #3A5570;
+    --ink: #1A1A18;
+    --ink-soft: #55534C;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+  .wrap { max-width: 800px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- Header ---------- */
+  header {
+    background: linear-gradient(155deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color: var(--paper);
+    padding: 100px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header .wrap { position: relative; z-index: 2; }
+
+  header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      to bottom, transparent, transparent 43px,
+      rgba(255,255,255,0.03) 43px, rgba(255,255,255,0.03) 44px
+    );
+    z-index: 1;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -120px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,155,60,0.12);
+    z-index: 1;
+  }
+
+  .gold-rule { width: 64px; height: 4px; background: var(--brass); margin-bottom: 28px; }
+
+  header h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    max-width: 12ch;
+    opacity: 0;
+    animation: rise 0.7s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+
+  header .role {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.28rem;
+    color: var(--brass-soft);
+    margin-top: 14px;
+    opacity: 0;
+    animation: rise 0.7s cubic-bezier(.2,.7,.3,1) 0.12s forwards;
+  }
+
+  header .lede {
+    max-width: 52ch;
+    margin-top: 26px;
+    color: #A9B7C4;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    opacity: 0;
+    animation: rise 0.7s cubic-bezier(.2,.7,.3,1) 0.22s forwards;
+  }
+
+  .contact-row {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    font-size: 0.92rem;
+    color: #C9D3DC;
+    opacity: 0;
+    animation: rise 0.7s cubic-bezier(.2,.7,.3,1) 0.32s forwards;
+  }
+
+  .contact-row a { text-decoration: none; border-bottom: 1px solid rgba(200,155,60,0.5); padding-bottom: 1px; }
+  .contact-row a:hover { border-bottom-color: var(--brass); }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: 76px 0; }
+  section + section { border-top: 1px solid #E2DCCC; }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.55rem;
+    color: var(--navy);
+    margin-bottom: 36px;
+  }
+
+  /* ---------- Summary ---------- */
+  #summary p {
+    font-family: var(--serif);
+    font-size: 1.22rem;
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 66ch;
+    font-weight: 400;
+  }
+
+  .summary-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 44px;
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .stat-label {
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  /* ---------- Experience timeline ---------- */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 4px; top: 6px; bottom: 6px;
+    width: 2px;
+    background: var(--paper-dim);
+  }
+
+  .job { position: relative; padding-bottom: 48px; }
+  .job:last-child { padding-bottom: 0; }
+
+  .job::before {
+    content: "";
+    position: absolute;
+    left: -28px; top: 5px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--brass);
+    border: 2px solid var(--paper);
+    box-shadow: 0 0 0 2px var(--paper-dim);
+  }
+
+  .job:first-child::before {
+    background: var(--navy);
+    width: 12px; height: 12px;
+    left: -29px;
+  }
+
+  .job-dates {
+    font-size: 0.85rem;
+    color: var(--slate);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 6px;
+  }
+
+  .job-current {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--navy);
+    background: var(--brass-soft);
+    padding: 2px 8px;
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+
+  .job-title {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .job-org {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-top: 2px;
+    margin-bottom: 14px;
+  }
+
+  .job ul { color: var(--ink-soft); max-width: 64ch; font-size: 0.98rem; padding-left: 18px; }
+  .job li { margin-bottom: 6px; }
+  .job li::marker { color: var(--brass); }
+
+  /* ---------- Competencies ---------- */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 40px;
+  }
+
+  .comp-group-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--brass-soft);
+  }
+
+  .comp-items { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.9; }
+
+  /* ---------- Education ---------- */
+  .edu-grid { display: grid; grid-template-columns: 1fr; gap: 26px; }
+
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E2DCCC;
+  }
+  .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .edu-name { font-weight: 600; color: var(--ink); }
+  .edu-school { color: var(--ink-soft); font-size: 0.92rem; margin-top: 3px; }
+  .edu-score {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    color: var(--navy);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* ---------- Leadership ---------- */
+  .leader-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  .leader-card { position: relative; padding-left: 22px; }
+  .leader-card .bar {
+    position: absolute; left: 0; top: 4px; bottom: 4px;
+    width: 4px; background: var(--brass); border-radius: 2px;
+  }
+
+  .leader-title {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.08rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .leader-sub { font-size: 0.85rem; color: var(--slate); margin-bottom: 10px; }
+  .leader-card p { color: var(--ink-soft); font-size: 0.95rem; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy-deep);
+    color: #8FA1B2;
+    padding: 46px 0;
+    font-size: 0.88rem;
+    text-align: center;
+  }
+  footer a { color: #C9D3DC; text-decoration: none; border-bottom: 1px solid rgba(200,155,60,0.4); }
+
+  @media (max-width: 620px) {
+    header { padding: 76px 0 64px; }
+    section { padding: 58px 0; }
+    .edu-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .comp-grid, .leader-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) { background: #14120E; color: #E8E3D6; }
+    body:not([data-theme="light"]) section + section { border-color: #2B2820; }
+    body:not([data-theme="light"]) h2 { color: #E3C874; }
+    body:not([data-theme="light"]) #summary p { color: #E8E3D6; }
+    body:not([data-theme="light"]) .stat-num { color: #E3C874; }
+    body:not([data-theme="light"]) .stat-label { color: #B3ABA0; }
+    body:not([data-theme="light"]) .job-title { color: #F2EEE2; }
+    body:not([data-theme="light"]) .job-org, body:not([data-theme="light"]) .job ul { color: #B3ABA0; }
+    body:not([data-theme="light"]) .timeline::before { background: #2B2820; }
+    body:not([data-theme="light"]) .job:first-child::before { background: #E3C874; }
+    body:not([data-theme="light"]) .comp-group-title { color: #E3C874; border-color: #4A3E22; }
+    body:not([data-theme="light"]) .comp-items { color: #B3ABA0; }
+    body:not([data-theme="light"]) .edu-item { border-color: #2B2820; }
+    body:not([data-theme="light"]) .edu-name { color: #F2EEE2; }
+    body:not([data-theme="light"]) .edu-score { color: #E3C874; }
+    body:not([data-theme="light"]) .leader-title { color: #F2EEE2; }
+    body:not([data-theme="light"]) .leader-card p { color: #B3ABA0; }
+  }
+  body[data-theme="dark"] { background: #14120E; color: #E8E3D6; }
+  body[data-theme="dark"] section + section { border-color: #2B2820; }
+  body[data-theme="dark"] h2 { color: #E3C874; }
+  body[data-theme="dark"] #summary p { color: #E8E3D6; }
+  body[data-theme="dark"] .stat-num { color: #E3C874; }
+  body[data-theme="dark"] .stat-label { color: #B3ABA0; }
+  body[data-theme="dark"] .job-title { color: #F2EEE2; }
+  body[data-theme="dark"] .job-org, body[data-theme="dark"] .job ul { color: #B3ABA0; }
+  body[data-theme="dark"] .timeline::before { background: #2B2820; }
+  body[data-theme="dark"] .job:first-child::before { background: #E3C874; }
+  body[data-theme="dark"] .comp-group-title { color: #E3C874; border-color: #4A3E22; }
+  body[data-theme="dark"] .comp-items { color: #B3ABA0; }
+  body[data-theme="dark"] .edu-item { border-color: #2B2820; }
+  body[data-theme="dark"] .edu-name { color: #F2EEE2; }
+  body[data-theme="dark"] .edu-score { color: #E3C874; }
+  body[data-theme="dark"] .leader-title { color: #F2EEE2; }
+  body[data-theme="dark"] .leader-card p { color: #B3ABA0; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="gold-rule"></div>
+    <h1>Ranjith Kumar R</h1>
+    <p class="role">Senior Quality Analyst &amp; Assurance Professional</p>
+    <p class="lede">Over four years auditing calls and coaching agents across banking, telecom, and insurance — turning what I hear on a call into feedback that measurably improves how a team performs.</p>
+    <div class="contact-row">
+      <a href="tel:+918825782900">+91 88257 82900</a>
+      <a href="mailto:ranjithrk890@gmail.com">ranjithrk890@gmail.com</a>
+      <span>Chennai, India</span>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="wrap">
+    <h2>Summary</h2>
+    <p>Results-driven Senior Quality Analyst with specialised experience across banking, insurance, and telecom. Recognised for rigorous compliance audits, AI-integrated call audits that elevate sales performance, and coaching that sticks — combining a technical foundation in computer applications with hands-on leadership of quality frameworks and performance metrics.</p>
+    <div class="summary-stats">
+      <div>
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Years in quality &amp; assurance</div>
+      </div>
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Sectors — banking, telecom, insurance</div>
+      </div>
+      <div>
+        <div class="stat-num">1,500+</div>
+        <div class="stat-label">Students led as house captain</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-dates">June 2026 — Present<span class="job-current">Current</span></div>
+        <div class="job-title">Senior Quality Analyst</div>
+        <div class="job-org">Star Health Insurance</div>
+        <ul>
+          <li>Perform rigorous quality audits and monitoring for insurance customer interactions to ensure high standards of service excellence.</li>
+          <li>Leverage AI-integrated audit tools to evaluate call quality, identify sales conversion gaps, and drive successful sales performance.</li>
+          <li>Deliver targeted coaching and actionable feedback to agents, enhancing overall call effectiveness and conversions.</li>
+          <li>Conduct comprehensive compliance audits and collaborate with operations teams to optimise insurance workflow processes.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-dates">May 2025 — June 2026</div>
+        <div class="job-title">Quality Analyst</div>
+        <div class="job-org">Hexaware Technologies — Telecom Sector</div>
+        <ul>
+          <li>Monitored customer interactions, evaluated agent performance, and delivered actionable feedback and developmental coaching.</li>
+          <li>Conducted compliance audits to ensure adherence to strict regulatory standards and internal quality benchmarks.</li>
+          <li>Performed root cause analysis for process gaps, operational bottlenecks, and service delivery issues.</li>
+          <li>Collaborated with Training and stakeholder teams to formulate targeted action plans, improving process efficiency.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-dates">September 2022 — May 2025</div>
+        <div class="job-title">Quality Executive</div>
+        <div class="job-org">HDFC Phone Banking</div>
+        <ul>
+          <li>Managed comprehensive call monitoring for banking customer care services, ensuring high standards of quality assurance.</li>
+          <li>Provided daily feedback and detailed audit comments to agents, driving continuous performance enhancement.</li>
+          <li>Designed and executed structured product training sessions and new-hire certifications for onboarding.</li>
+          <li>Maintained precise quality reports and conducted regular call calibrations aligned to industry best practice.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-dates">September 2021 — September 2022</div>
+        <div class="job-title">Phone Banking Executive</div>
+        <div class="job-org">HDFC Phone Banking</div>
+        <ul>
+          <li>Advised customers on banking products and financial services tailored to their needs.</li>
+          <li>Identified cross-selling opportunities over customer calls and consistently converted leads for banking products.</li>
+          <li>Handled escalated customer concerns with professionalism, ensuring high satisfaction and SLA adherence.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Core Competencies</h2>
+    <div class="comp-grid">
+      <div>
+        <div class="comp-group-title">QUALITY &amp; COMPLIANCE</div>
+        <div class="comp-items">Quality Assurance<br>AI-Integrated Call Audits<br>Compliance Audits<br>Call Calibration<br>Root Cause Analysis</div>
+      </div>
+      <div>
+        <div class="comp-group-title">SALES &amp; PERFORMANCE</div>
+        <div class="comp-items">Sales Conversion Improvement<br>Call Effectiveness<br>Quality Metric Tracking<br>Process Optimisation</div>
+      </div>
+      <div>
+        <div class="comp-group-title">TECHNICAL &amp; TOOLS</div>
+        <div class="comp-items">AI Tools Handling<br>MS Office Suite<br>Database Management<br>System Analysis<br>7QC Tools</div>
+      </div>
+      <div>
+        <div class="comp-group-title">TRAINING &amp; LEADERSHIP</div>
+        <div class="comp-items">Constructive Feedback &amp; Coaching<br>New Hire Certification<br>Quality Reports<br>Presentations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <div>
+          <div class="edu-name">Bachelor of Computer Applications (BCA)</div>
+          <div class="edu-school">Hindustan College of Arts and Science — programming, software development, database management, and system analysis</div>
+        </div>
+        <div class="edu-score">60%</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-name">HSC — Maths with Computer Science</div>
+          <div class="edu-school">Jaigopal Garodia National School</div>
+        </div>
+        <div class="edu-score">73%</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-name">SSLC — General</div>
+          <div class="edu-school">Shri Venkateshwara Higher Secondary School</div>
+        </div>
+        <div class="edu-score">84%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="wrap">
+    <h2>Leadership &amp; Extracurricular</h2>
+    <div class="leader-grid">
+      <div class="leader-card">
+        <div class="bar"></div>
+        <div class="leader-title">Sports Secretary &amp; College House Captain</div>
+        <div class="leader-sub">College Leadership Role</div>
+        <p>Directed and coordinated activities and events for a student body of over 1,500, demonstrating large-scale organisational, administrative, and public leadership.</p>
+      </div>
+      <div class="leader-card">
+        <div class="bar"></div>
+        <div class="leader-title">College Team Captain — 3 Years</div>
+        <div class="leader-sub">Competitive Collegiate Sports</div>
+        <p>Captained across volleyball, cricket, and kho kho, spearheading team motivation, tactical planning, and cross-functional collaboration under competitive pressure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Ranjith Kumar R · <a href="mailto:ranjithrk890@gmail.com">ranjithrk890@gmail.com</a> · +91 88257 82900
+  </div>
+</footer>
+
+</body>
+</html>
